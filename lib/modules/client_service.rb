@@ -18,10 +18,10 @@ module ClientService
           if item[:full_name].downcase.include? search_query.downcase
             customers.push(item)
           end }
-        if customers
-          json_formatter(customers)
-        else
+        if customers.empty?
           print "Given client does not match with our system.\n\n"
+        else
+          json_formatter(customers)
         end
       end
     end
