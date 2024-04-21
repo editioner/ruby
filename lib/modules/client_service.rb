@@ -1,6 +1,6 @@
 module ClientService
   # Search customer function
-  def search(data_set)
+  def search
     loop do
       puts AppConstants::CUSTOMER_SEARCH_TEXT
       search_query = gets.chomp
@@ -13,11 +13,7 @@ module ClientService
       elsif search_query == 'b'
         AppService.execute
       else
-        customers = []
-        data_set.select { |item|
-          if item[:full_name].downcase.include? search_query.downcase
-            customers.push(item)
-          end }
+        customers = search_customer(search_query)
         if customers.empty?
           print "Given client does not match with our system.\n\n"
         else
@@ -27,10 +23,20 @@ module ClientService
     end
   end
 
+  # Search customer using search query
+  def search_customer(search_query)
+    customers = []
+
+    $data_set.select { |item|
+      if item[:full_name].downcase.include? search_query.downcase
+        customers.push(item)
+      end }
+  end
+
   # Find duplicate data from data set
-  def find_duplicates(data_set)
+  def find_duplicates
     duplicate_data = []
-    data_set.group_by { |customer| customer[:email] }.values.select { |customers|
+    $data_set.group_by { |customer| customer[:email] }.values.select { |customers|
       if customers.size > 1
         duplicate_data.push(customers)
       end
