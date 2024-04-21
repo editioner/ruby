@@ -25,11 +25,11 @@ https://rubyinstaller.org/
 * Listing all available clients  <br>
 
 ## Lets get started
-This is a simple command line application for manipulating given 'json' data set<br>
+* This is a simple command line application for manipulating given 'json' data set<br>
+* Clone this branch to your local machine. Please refer to 'Gemfile' for dependencies required<br>
+* To start the application type following command inside your project directory: <br>
 
-Clone this branch to your local machine. Please refer to 'Gemfile' for dependencies required<br>
-
-To start the application type following command inside your project directory: <br>
+#### **Data for this application is provided in ./data/clients.json**
 
 ```shell
 ruby app.rb
