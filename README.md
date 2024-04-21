@@ -40,3 +40,22 @@ Application has successfully loaded data client data set. <br>
 You can select from option 1 - 4 for the relevant action you need.
 
 ![img.png](img.png)
+
+## Test Cases 
+
+Testing will be done using 'rspec', To install dependencies from Gemfile type the following command
+
+```shell
+bundle install --path .bundle
+```
+
+Test cases are located `spec` Folder<br>
+
+To run test type the following command
+```shell
+bundle exec rspec
+```
+To run test on specific file run the following command
+```shell
+bundle exec rspec `file_name`
+```
