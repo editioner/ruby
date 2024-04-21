@@ -19,10 +19,10 @@ module AppService
       case choice
       when AppConstants::CUSTOMER_SEARCH
         # Search customer by name
-        puts ClientService.search($data_set)
+        puts ClientService.search
       when AppConstants::FIND_DUPLICATES
         # Find duplicate entries from data set
-        puts ClientService.find_duplicates($data_set)
+        puts ClientService.find_duplicates
       when AppConstants::LIST_CLIENTS
         # List all clients
         ClientService.list_clients
